@@ -11,9 +11,6 @@ function AuthRequired(req, res, next) {
     res.status(403);
     res.send('Not premitted');
 }
-router.get('/login', function (req, res) {
-    res.send("\n       <form method=\"POST\">\n            <div>\n            <lable>Email</label>\n            <input name=\"email\">\n            </div>\n            <div>\n            <label>Password</label>\n            <input type=\"password\" name=\"password\" >\n            </div>\n            <button>Submit</button>\n\n       </form>\n    ");
-});
 router.post('/login', function (req, res) {
     var _a = req.body, email = _a.email, password = _a.password;
     if (email && password && email === 'hi@hi.com' && password === 'password') {
